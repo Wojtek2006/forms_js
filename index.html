@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forms</title>
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link 
+		href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" 
+		rel="stylesheet">
+
+</head>
+<body>
+
+	<nav class="menu">
+		<a class="menu__link">PESEL</a>
+		<a class="menu__link">LOREM</a>
+		<a class="menu__link">IPSUM</a>
+		<a class="menu__link">DOLOR</a>
+		<a class="menu__link">HABET</a>
+	</nav>
+
+	<main>
+
+	<section class="PESEL__wrapper">
+
+		<div class="ID">
+			<div class="ID__top">
+				<div class="ID__top--left">
+					<span class="ID--sm_font">NUMER PESEL / PERSONAL NUMBER</span>
+					<h3 class="ID--bold_font"><span class="class="PESEL"">12345678912</span></h3>
+					<span class="ID--sm_font">OBYWATELSTWO / NATIONALITY</span>
+					<h4 class="ID--bold_font">POLSKIE</h4>
+				</div>
+				<div class="ID__top--ID_num">
+					<span class="ID--sm_font"> 
+						NUMER DOWODU OSOBISTEGO /<br>
+						IDENTITY CARD NUMBER
+					</span>
+					<span class="ID--number">
+						ABC 123456
+					</span>
+				</div>
+			</div>
+
+			<div class="ID__mid">
+				<div class="ID__mid--location">
+					<span class="ID--sm_font">MIEJSCE URODZENIA / PLACE OF BIRTH</span>
+					<h3 ID--bold_font>PIŁA</h3>
+					<span class="ID--sm_font">ORGAN WYDAJĄCY / ISSUING AUTHORITY</span>
+					<h3 ID--bold_font>PREZYDENT MIASTA PIŁY</h3>
+				</div>
+				<div class="ID__mid--date">
+					<span class="ID--sm_font">
+						DATA WYDANIA /<br>
+						DATE OF ISSUE	
+					</span>
+					<h3 ID--bold_font>01.01.2001</h3>
+					<span class="ID--sm_font">
+						TERMIN WAŻNOŚCI /<br>
+						EXPIRY DATE	
+					</span>
+					<h3 ID--bold_font>12.12.2012</h3>
+				</div>
+			</div>
+
+			<div class="ID__PESEL">
+				<span class="ID--bold_font--PESEL">
+					I&lt;POLABC123456&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+				<span class="ID--bold_font--PESEL">
+					1258349M2158230POL
+					<span class="PESEL">123456789129</span>
+				</span>
+				<span class="ID--bold_font--PESEL">
+					<span class="name">ANDRZEJ</span>
+					&lt;&lt;
+					<span class="surname">NOWAK</span>
+					&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+				</span>
+			</div>
+		</div>
+
+		<div class="PESEL__fields">
+			<input type="date" id="PESEL__date">
+			<select id="PESEL__gender">
+				<option value="wom">Kobieta</option>
+				<option value="men">Mężczyzna</option>
+			</select>
+			<input type="text" placeholder="Imię" id="PESEL__name">
+			<input type="text" placeholder="Nazwisko" id="PESEL__surname">
+			<button class="PESEL__fields--btn">Wyślij</button>
+		</div>
+	</section>
+
+
+	</main>
+<script
+	src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous">
+</script>
+<script src="index.js"></script>
+</body>
+</html>

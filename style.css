@@ -1,0 +1,134 @@
+/* Variables */
+:root {
+	--main-color: hsl(216, 74%, 43%);
+	--secondary-color: hsl(216, 74%, 20%);
+	--box-shadow-color: hsl(216, 74%, 15%); 
+	--bg-color: hsl(0, 10%, 94%);
+
+	--font-fam: "Outfit", sans-serif;
+}
+
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--font-fam);
+}
+
+body {
+	background-color: var(--bg-color);
+}
+
+
+/* 
+-------------------------------------
+			  NAV BAR
+-------------------------------------
+*/
+
+.menu {
+	position: sticky;
+	top: 0;
+
+	display: flex;
+	justify-content: space-evenly;
+
+	padding-block: 0.7rem;
+
+	background-color: var(--main-color);
+	box-shadow: 0px 4px 17px -3px var(--box-shadow-color);
+}
+
+.menu__link {
+	padding-block: 0.5rem;
+	padding-inline: 5rem;
+	border-radius: 5px;
+
+	transition: all 0.4s ease-in-out;
+}
+
+.menu__link:hover {
+	background-color: var(--secondary-color);
+	color: #EEEEEE;
+}
+
+/* 
+-------------------------------------
+			    PESEL
+-------------------------------------
+*/
+
+.ID {
+	margin-block-start: 15rem;
+	margin-inline: auto;
+
+	max-width: 50rem;
+
+	border: 0.2rem black solid;
+	border-radius: 5px;
+	background: linear-gradient(90deg,hsl(142, 13%, 84%) 20%, hsl(0, 78%, 91%) 50%, hsl(142, 13%, 84%) 80%);
+}
+
+.ID--sm_font {
+	display: block;
+}
+
+.ID--bold_font {
+	font-weight: bold;
+}
+
+.ID--bold_font--PESEL {
+	font-weight: bold;
+	display: block;
+	font-size:  1.2rem;
+	letter-spacing: 0.5rem;
+}
+
+
+.ID__top {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 1rem;
+}
+
+.ID--number {
+	display: block;
+	margin-top: 0.5rem;
+	text-align: center;
+	color: rgb(90, 90, 90);
+}
+
+
+.ID__mid {
+	display: flex;
+	justify-content: space-between;
+
+	margin-block: 1rem;
+
+	padding: 1rem;
+}
+
+.ID__PESEL {
+	border-top: hsl(240, 42%, 60%) 0.2rem solid;
+	text-align: center;
+	padding-inline: 1rem;
+	padding-block: 3rem;
+
+	background-color: rgba(255, 255, 255, 45%);
+}
+
+.PESEL__fields {
+	margin-block-start: 2rem;
+
+	display: flex;
+	justify-content: center;
+
+	gap: 1rem;
+
+}
+
+.PESEL__fields * {
+	font-size: 1.1rem;
+}
