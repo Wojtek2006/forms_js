@@ -1,17 +1,38 @@
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		console.log(entry);
+		if (entry.isIntersecting) {
+			entry.target.classList.add('show');
+		}
+		else {
+			entry.target.classList.remove('show');
+		}
+	});
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+// <-----------------> PESEL <-----------------> 
+
+const oddNums = ["1", "3", "5", "7", "9"];
+const evenNums = ["0", "2", "4", "6", "8"];
+
 $( ".PESEL__fields--btn" ).on( "click", function() {
 	const name = $( "#PESEL__name" ).val();
 	const surname = $( "#PESEL__surname" ).val();
 	const date = $( "#PESEL__date" ).val().split("-");
+	const gender = $( "#PESEL__gender" ).val();
 
-	alert(date);
 
-	setPESELName(name);
-	setPESELSurname(surname);
+	setPeselName(name);
+	setPeselSurname(surname);
 
-	generatePESEL(date[2], date[1], date[0]);
+	generatePesel(date[2], date[1], date[0], gender);
 }); 
 
-function setPESELName(name) {
+function setPeselName(name) {
 	if (name != "") {
 		$( ".name" ).html(name.toUpperCase());
 	}
@@ -20,7 +41,7 @@ function setPESELName(name) {
 	}
 }
 
-function setPESELSurname(surname) {
+function setPeselSurname(surname) {
 	if (surname != "") {
 		$( ".surname" ).html(surname.toUpperCase());
 	}
@@ -29,13 +50,38 @@ function setPESELSurname(surname) {
 	}
 }
 
-function generatePESEL(day, month, year) {
-	const PESELDay = day;
-	const PESELMonth = year > 1999 ? parseInt(month) + 20 : month;
-	const PESELYear = year.substring(2);
+function setPesel(Pesel) {
+	if (Pesel.length == 11) {
+		$( ".PESEL" ).html(Pesel);
+	}
+	else {
+		return;
+	}
+}
 
+function calcPeselControlNum(Pesel) {
+	let numWeight = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
+	let ctrlNum = 0;
 
-	alert(PESELDay);
-	alert(PESELMonth);
-	alert(PESELYear);
+	for (let i = 0; i < Pesel.length; i++) {
+		ctrlNum += (Pesel[i] * numWeight[i]) % 10;
+	}
+
+	ctrlNum = 10 - (ctrlNum % 10);
+
+	return ctrlNum;
+}
+
+function generatePesel(day, month, year, gender) {
+	const peselDay = day;
+	const peselMonth = year > 1999 ? parseInt(month) + 20 : month;
+	const peselYear = year.substring(2);
+	const peselGender = gender == "man" ? oddNums[Math.floor(Math.random() * 4)] : evenNums[Math.floor(Math.random() * 4)];
+	const peselOrderNum = Math.floor((Math.random() * 999) + 100);
+	const unfinPesel = peselYear + peselMonth + peselDay + peselOrderNum + peselGender;
+	const ctrlNum = calcPeselControlNum(unfinPesel);
+
+	const PESEL = peselYear + peselMonth + peselDay + peselOrderNum + peselGender + ctrlNum;
+
+	setPesel(PESEL);
 }

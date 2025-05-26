@@ -1,6 +1,7 @@
 /* Variables */
 :root {
 	--main-color: hsl(216, 74%, 43%);
+	--main-color-light: hsl(216, 74%, 53%);
 	--secondary-color: hsl(216, 74%, 20%);
 	--box-shadow-color: hsl(216, 74%, 15%); 
 	--bg-color: hsl(0, 10%, 94%);
@@ -17,7 +18,25 @@
 }
 
 body {
+	position: relative;
 	background-color: var(--bg-color);
+}
+
+section {
+	min-height: 100vh;
+}
+
+.hidden {
+	opacity: 0;
+	filter: blur(3px);
+	transform: translateX(100%);
+	transition: all 1s;
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
 }
 
 
@@ -27,8 +46,10 @@ body {
 -------------------------------------
 */
 
+
 .menu {
 	position: sticky;
+	z-index: 9999;
 	top: 0;
 
 	display: flex;
@@ -53,14 +74,16 @@ body {
 	color: #EEEEEE;
 }
 
+
 /* 
 -------------------------------------
 			    PESEL
 -------------------------------------
 */
 
+
 .ID {
-	margin-block-start: 15rem;
+	margin-block-start: 10rem;
 	margin-inline: auto;
 
 	max-width: 50rem;
@@ -131,4 +154,45 @@ body {
 
 .PESEL__fields * {
 	font-size: 1.1rem;
+}
+
+
+/*
+-------------------------------------
+			  REGISTER
+-------------------------------------
+*/
+
+.Register {
+	margin: auto;
+
+	max-width: 30rem;
+
+	padding: 1.2rem;
+
+	border-radius: 5px;
+	background-color: var(--main-color-light);
+
+}
+
+.Register__fields {
+
+	display: grid;
+	grid-template-columns: minmax(10rem, 20rem);
+	justify-content: center;
+	gap: 1rem;
+
+
+	margin-block-end: 2rem;
+}
+
+.Register__fields * {
+	font-size: 1.1rem;
+	padding: 0.2rem;
+	padding-inline-start: 0.8rem;
+}
+
+.Register__btn {
+	padding: 0.2rem;
+	font-size: 1rem;
 }

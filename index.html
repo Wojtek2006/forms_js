@@ -17,7 +17,7 @@
 
 	<nav class="menu">
 		<a class="menu__link">PESEL</a>
-		<a class="menu__link">LOREM</a>
+		<a class="menu__link">HASŁO</a>
 		<a class="menu__link">IPSUM</a>
 		<a class="menu__link">DOLOR</a>
 		<a class="menu__link">HABET</a>
@@ -25,13 +25,13 @@
 
 	<main>
 
-	<section class="PESEL__wrapper">
+	<section class="PESEL__wrapper hidden">
 
 		<div class="ID">
 			<div class="ID__top">
 				<div class="ID__top--left">
 					<span class="ID--sm_font">NUMER PESEL / PERSONAL NUMBER</span>
-					<h3 class="ID--bold_font"><span class="class="PESEL"">12345678912</span></h3>
+					<h3 class="ID--bold_font"><span class="PESEL">12345678912</span></h3>
 					<span class="ID--sm_font">OBYWATELSTWO / NATIONALITY</span>
 					<h4 class="ID--bold_font">POLSKIE</h4>
 				</div>
@@ -87,7 +87,7 @@
 			<input type="date" id="PESEL__date">
 			<select id="PESEL__gender">
 				<option value="wom">Kobieta</option>
-				<option value="men">Mężczyzna</option>
+				<option value="man">Mężczyzna</option>
 			</select>
 			<input type="text" placeholder="Imię" id="PESEL__name">
 			<input type="text" placeholder="Nazwisko" id="PESEL__surname">
@@ -95,6 +95,19 @@
 		</div>
 	</section>
 
+
+	<section class="Register__wrapper">
+		<div class="Register">
+			<div class="Register__fields">
+				<input type="text" id="Register__username" placeholder="Nazwa użytkownika">
+				<input type="email" id="Register__email" placeholder="Adres email">
+				<input type="password" id="Register__pass" placeholder="Hasło">
+				<input type="tel" id="Register__tel" placeholder="Numer telefon">
+			</div>
+
+			<button class="Register__btn">Zarejestruj się</button>
+		</div>
+	</section>
 
 	</main>
 <script
